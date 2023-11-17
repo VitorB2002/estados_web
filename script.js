@@ -38,6 +38,18 @@ function getEstados() {
     })
 }
 
+function getDetalhes(id) {
+    fetch("https://api-estados-br.onrender.com/estados/detalhes/" + id)
+    .then((res) => res.json())
+    .then(payload => {
+        if(payload.status == 200){
+            console.log(payload.data)
+        }   else{
+            console.log("Error")
+        }
+    })
+}
+
 getEstados()
 
 for(let i = 0; i < 27; i++){
@@ -45,7 +57,7 @@ for(let i = 0; i < 27; i++){
         let nomeEstado = estados[ids[i]].getAttribute("name")
         for(let i = 1; i <= 27; i++){
             if(nomeEstado == listaApi[i].estado){
-                console.log(listaApi[i])
+                getDetalhes(i)
                 break
             }
         }
