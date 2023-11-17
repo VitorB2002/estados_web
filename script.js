@@ -31,7 +31,17 @@ let ids = [
 ]
 
 for(let i = 0; i < 27; i++){
-    estados[ids[i]].addEventListener('click', () => {console.log(estados[ids[i]].getAttribute("name"))})
-    estados[ids[i]].addEventListener('mouseover', () => {estados[ids[i]].setAttribute("fill", "#f00")})
-    estados[ids[i]].addEventListener('mouseout', () => {estados[ids[i]].setAttribute("fill", "#7c7c7c")})
+    estados[ids[i]].addEventListener('click', () => {
+        console.log(estados[ids[i]].getAttribute("name"))
+    })
+    
+    estados[ids[i]].addEventListener('mouseover', () => {
+        estados[ids[i]].setAttribute("fill", "#f00")
+        let selecionado = document.getElementById("select")
+        selecionado.innerText = "Estado Selecionado: " + estados[ids[i]].getAttribute("name")
+    })
+
+    estados[ids[i]].addEventListener('mouseout', () => {
+        estados[ids[i]].setAttribute("fill", "#7c7c7c")
+    })
 }
