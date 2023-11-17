@@ -12,6 +12,6 @@ Este projeto foi criado com único intuito de estudar sobre o consumo de dados v
 
 # Tecnologias Utilizadas
 
-* Python
-* FastApi
-* Uvicorn
+* JavaScript
+* HTML
+* CSS
