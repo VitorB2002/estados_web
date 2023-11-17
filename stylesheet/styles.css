@@ -3,6 +3,22 @@
     padding: 0;
 }
 
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+    font-size: 32px;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+
+#links {
+    display: flex;
+    gap: 40px;
+}
+
 main {
     display: flex;
     font-size: 35px;
