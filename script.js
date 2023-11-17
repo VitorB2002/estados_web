@@ -31,6 +31,10 @@ const ids = [
     "BRA681",
 ]
 
+function formatNumber(num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+}
+
 function getEstados() {
     fetch("https://api-estados-br.onrender.com/estados")
     .then((res) => res.json())
@@ -50,8 +54,8 @@ function getDetalhes(id) {
             resultsData += "Estado: " + payload.data.estado + " | UF: (" + payload.data.uf + ")<br>"
             resultsData += "Região: " + payload.data.regiao + "<br>"
             resultsData += "Capital: " + payload.data.capital + "<br>"
-            resultsData += "Área (km²): " + payload.data["area_km2"] + "<br>"
-            resultsData += "População: " + payload.data.populacao + "<br>"
+            resultsData += "Área (km²): " + formatNumber(payload.data["area_km2"]) + "<br>"
+            resultsData += "População: " + formatNumber(payload.data.populacao) + "<br>"
             resultsData += "IDH: " + payload.data.idh + "<br>"
             resultsData += "Fuso Horário: " + payload.data["fuso_horario"]
             resultsData += "</p>"
