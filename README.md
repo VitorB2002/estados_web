@@ -4,7 +4,7 @@ Esta aplicação web tem o intuito de consumir os dados da <a href="https://gith
 
 # Referências
 
-O modelo svg do mapa brasileiro foi obtido atráves do site <a href="https://simplemaps.com/resources/svg-br">simplemaps</a>
+O modelo svg do mapa brasileiro foi obtido atráves do site <a href="https://simplemaps.com/resources/svg-br">simplemaps</a>.
 
 # Motivação
 
