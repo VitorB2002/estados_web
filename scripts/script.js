@@ -73,7 +73,7 @@ for(let i = 0; i < 27; i++){
     estados[ids[i]].addEventListener('click', () => {
         results.innerHTML = null
         let searching = document.createElement("img")
-        searching.setAttribute("src", "search.gif")
+        searching.setAttribute("src", "./images/search.gif")
         searching.setAttribute("width", "50%")
         results.append(searching)
         let nomeEstado = estados[ids[i]].getAttribute("name")
