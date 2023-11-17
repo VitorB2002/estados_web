@@ -1,6 +1,6 @@
 let estados = document.getElementsByClassName("estado")
-
-let ids = [
+let listaApi
+const ids = [
     "BRA1294", 
     "BRA1311", 
     "BRA1313", 
@@ -30,9 +30,25 @@ let ids = [
     "BRA681",
 ]
 
+function getEstados() {
+    fetch("https://api-estados-br.onrender.com/estados")
+    .then((res) => res.json())
+    .then(payload => {
+        listaApi = payload.data
+    })
+}
+
+getEstados()
+
 for(let i = 0; i < 27; i++){
     estados[ids[i]].addEventListener('click', () => {
-        console.log(estados[ids[i]].getAttribute("name"))
+        let nomeEstado = estados[ids[i]].getAttribute("name")
+        for(let i = 1; i <= 27; i++){
+            if(nomeEstado == listaApi[i].estado){
+                console.log(listaApi[i])
+                break
+            }
+        }
     })
     
     estados[ids[i]].addEventListener('mouseover', () => {
@@ -43,5 +59,7 @@ for(let i = 0; i < 27; i++){
 
     estados[ids[i]].addEventListener('mouseout', () => {
         estados[ids[i]].setAttribute("fill", "#7c7c7c")
+        let selecionado = document.getElementById("select")
+        selecionado.innerText = "Estado Selecionado: "
     })
 }
